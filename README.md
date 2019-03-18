@@ -1,20 +1,31 @@
-# Chirper Project
+# Chirper
 
-This repo is a code-along with the first project in the [React Nanodegree program](https://www.udacity.com/course/react-nanodegree--nd019).
+Chirper allows a user to tweet, like, reply, & navigate a Twitter-like timeline of posts. It is build using Redux & React.
 
-Most of the commits in this repository correspond to videos in the program.
+It is part of Udacity's [React Nanodegree program](https://www.udacity.com/course/react-nanodegree--nd019).
 
-## Project Setup
+## Installation
 
-* clone the Project - `git@github.com:udacity/reactnd-chirper-app.git`
-* install the dependencies - `npm install`
+Clone the Project.
 
-## Contributing
+```bash
+git clone https://github.com/james-priest/reactnd-redux-twitter.git
+```
 
-Because this is a code-along project and the commits correspond to specific videos in the program, we will not be accepting pull requests.
+Install the dependencies.
 
-If you feel like there's a major problem, please open an issue to discuss the problem and potential resolution.
+```bash
+npm install
+```
 
-## License
+## Usage
 
-MIT
+Start the development server.
+
+```bash
+npm start
+```
+
+View app at
+
+- [http://localhost:3000](http://localhost:3000)
