@@ -1,13 +1,16 @@
 {
   "name": "chirper",
   "version": "0.1.0",
-  "private": true,
+  "description": "Chirper allows a user to tweet, like, reply & navigate a Twitter-like timeline of posts. It is build using Redux & React",
   "dependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-scripts": "2.1.8"
   },
   "scripts": {
+    "install-eslint": "npm i -D eslint-plugin-react",
+    "install-prettier": "npm i -D prettier eslint-config-prettier eslint-plugin-prettier",
+    "eslint-check": "eslint --print-config . | eslint-config-prettier-check",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -16,6 +19,17 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/udacity/reactnd-chirper-app.git"
-  }
+    "url": "https://github.com/james-priest/reactnd-redux-twitter.git"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.16.4"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
