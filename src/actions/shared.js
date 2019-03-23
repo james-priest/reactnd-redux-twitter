@@ -12,7 +12,9 @@ export function handleInitialData() {
     //   console.log(data);
     // });
     return getInitialData().then(({ users, tweets }) => {
-      console.log(tweets, users);
+      // console.log(tweets, users);
+      console.log('tweets:', tweets);
+      console.log('tweetsIDs:', Object.keys(tweets));
       dispatch(receiveUsers(users));
       dispatch(receiveTweets(tweets));
       dispatch(setAuthedUser(AUTHED_ID));
