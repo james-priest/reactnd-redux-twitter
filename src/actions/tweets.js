@@ -14,7 +14,7 @@ function addTweet(tweet) {
 
 export function handleAddTweet(text, replyingTo) {
   return (dispatch, getState) => {
-    const authedUser = getState();
+    const { authedUser } = getState();
 
     dispatch(showLoading());
 
@@ -23,7 +23,10 @@ export function handleAddTweet(text, replyingTo) {
       author: authedUser,
       replyingTo
     })
-      .then(tweet => dispatch(addTweet(tweet)))
+      .then(tweet => {
+        console.log('API returned tweet: ', tweet);
+        return dispatch(addTweet(tweet));
+      })
       .then(() => dispatch(hideLoading()));
   };
 }
