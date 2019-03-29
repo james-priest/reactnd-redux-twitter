@@ -24,7 +24,7 @@ export function handleAddTweet(text, replyingTo) {
       replyingTo
     })
       .then(tweet => {
-        console.log('API returned tweet: ', tweet);
+        // console.log('API returned tweet: ', tweet);
         return dispatch(addTweet(tweet));
       })
       .then(() => dispatch(hideLoading()));
