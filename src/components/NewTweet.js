@@ -21,7 +21,8 @@ class NewTweet extends Component {
 
     this.props.handleAddTweet(text, id);
 
-    console.log('New Tweet:', text);
+    // console.log('New Tweet:', text);
+    // console.log('ReplyingTo:', id);
 
     this.setState(() => ({
       text: ''
@@ -36,7 +37,9 @@ class NewTweet extends Component {
 
     return (
       <div>
-        <h3 className="center">Compose new Tweet</h3>
+        <h3 className="center">
+          {this.props.id ? 'Reply to tweet' : 'Compose new tweet'}
+        </h3>
         <form className="new-tweet" onSubmit={this.handleSubmit}>
           <textarea
             placeholder="What's happening?"
@@ -55,15 +58,9 @@ class NewTweet extends Component {
   }
 }
 
-function mapStateToProps({ id }) {
-  return {
-    id
-  };
-}
-
 const actionCreators = { handleAddTweet };
 
 export default connect(
-  mapStateToProps,
+  null,
   actionCreators
 )(NewTweet);
