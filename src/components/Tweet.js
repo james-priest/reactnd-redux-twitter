@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { formatTweet, formatDate } from '../utils/helpers';
 import {
@@ -22,9 +23,10 @@ export class Tweet extends Component {
   toParent = (e, id) => {
     e.preventDefault();
     // redirect to the parent tweet
+    this.props.history.push(`/tweet/${id}`);
   };
   render() {
-    const { tweet } = this.props;
+    const { tweet, id } = this.props;
     if (tweet === null) {
       return <p>This tweet doesn't exist</p>;
     }
@@ -39,7 +41,7 @@ export class Tweet extends Component {
       parent
     } = tweet;
     return (
-      <div className="tweet">
+      <Link to={`/tweet/${id}`} className="tweet">
         <img src={avatar} alt={`Avatar of ${name}`} className="avatar" />
         <div className="tweet-info">
           <div>
@@ -68,7 +70,7 @@ export class Tweet extends Component {
             <span>{likes !== 0 && likes}</span>
           </div>
         </div>
-      </div>
+      </Link>
     );
   }
 }
@@ -87,7 +89,9 @@ function mapStateToProps({ authedUser, users, tweets }, { id }) {
 
 const actionCreators = { handleToggleTweet };
 
-export default connect(
-  mapStateToProps,
-  actionCreators
-)(Tweet);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    actionCreators
+  )(Tweet)
+);
